@@ -1,0 +1,59 @@
+@import "../../styles/variables.scss";
+@import "../../styles/media-queries.scss";
+
+
+.carouselContainer {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(3, minmax(288px, 360px));
+    gap: 15px;
+    padding-bottom: 60px;
+}
+
+.bulletClass {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 1px solid $accent-1;
+    border-radius: 50%;
+}
+
+.bulletActive {
+    background-color: $accent-1;
+}
+
+.horizontalClass {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.carouselContainer > div {
+    width: 100%;
+}
+
+@include media-max(xl) {
+    .container {
+        justify-content: center;
+        height: auto;
+        // padding: 60px 30px;
+    }
+}
+
+@include media-max(lg) {
+    .container {
+        // padding: 50px 30px;
+    }
+
+    .carouselContainer {
+        grid-template-columns: repeat(2, minmax(288px, 414px));
+    }
+
+}
+
+@include media-max(md) {
+
+    .carouselContainer {
+        grid-template-columns: minmax(288px, 414px);
+    }
+}

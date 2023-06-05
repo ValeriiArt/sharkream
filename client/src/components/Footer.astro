@@ -1,0 +1,153 @@
+---
+import Social from "./common/Social.astro";
+---
+
+<footer class="footer">
+ <div class="container">
+  <div class="wrapper">
+   <div class="address-wrapper">
+    <address>
+     <div>
+      <p class="address-title">Адреса</p>
+      <p>Україна, м.Київ, вул. Овруцька, 18</p>
+     </div>
+     <div class="contact-wrapper">
+      <p class="address-title">Контакти</p>
+      <a href="tel:+380677771024">+38 067 777 10 24</a>
+      <a href="mailto:shark.team.rollerschool@gmail.com">
+       shark.team.rollerschool@gmail.com
+      </a>
+     </div>
+    </address>
+    <div class="social">
+     <Social />
+    </div>
+   </div>
+   <div class="map">
+    <iframe
+     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2539.372260467361!2d30.475298276952888!3d50.471413171596126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cdd938959e93%3A0x9c374feab6a8080a!2z0KLQpiDQn9GA0L7QvNC10L3QsNC00LAg0KbQtdC90YLRgCwg0LLRg9C70LjRhtGPINCe0LLRgNGD0YbRjNC60LAsIDE4LCDQmtC40ZfQsiwgMDQxMDc!5e0!3m2!1suk!2sua!4v1684937055765!5m2!1suk!2sua"
+     allowfullscreen=""
+     loading="lazy"
+     referrerpolicy="no-referrer-when-downgrade"></iframe>
+   </div>
+  </div>
+ </div>
+</footer>
+
+<style lang="scss">
+ @import "../styles/variables.scss";
+ @import "../styles/media-queries.scss";
+
+ .footer {
+  margin-top: 30px;
+  background: $background-footer;
+  @include media-min(lg) {
+   margin-top: 72px;
+  }
+ }
+
+ .wrapper {
+  justify-content: space-between;
+  gap: 30px;
+  padding: 64px 0;
+ }
+
+ .address-wrapper {
+  font-size: 20px;
+  line-height: 1.2;
+  & p {
+   color: $text-white-100;
+  }
+ }
+
+ .address-title {
+  padding-bottom: 24px;
+  font-family: "Merriweather";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.25;
+  color: $text-white-100;
+ }
+
+ .contact-wrapper {
+  margin-top: 24px;
+ }
+
+ .contact-wrapper a {
+  display: block;
+  position: relative;
+  color: $text-white-100;
+  background-color: transparent;
+  &:not(:last-child) {
+   margin-bottom: 16px;
+  }
+  &:hover {
+   color: $accent-1;
+   transition: color 0.2s ease-in-out;
+  }
+  &::after {
+   content: "";
+   position: absolute;
+   bottom: -2px;
+   left: 0;
+   width: 100%;
+   height: 2px;
+   background: $accent-gradient;
+   transform: scaleX(0);
+   transition: transform 0.2s ease-in-out;
+  }
+  &:hover::after {
+   transform: scaleX(1);
+  }
+ }
+
+ .social {
+  margin-top: 32px;
+  display: flex;
+ }
+
+ .map {
+  border-radius: 16px;
+  & iframe {
+   max-width: 100%;
+   width: 635px;
+   border: 0;
+   border-radius: 16px;
+  }
+ }
+
+ @include media-min(sm) {
+  .wrapper {
+   display: flex;
+  }
+
+  .map > iframe {
+   height: 292px;
+  }
+ }
+
+ @include media-max(sm) {
+  .wrapper {
+   gap: 24px;
+   padding: 40px 0;
+  }
+
+  .address-wrapper {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   text-align: center;
+   font-size: 16px;
+   & address {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+   }
+  }
+
+  .map > iframe {
+   margin-top: 30px;
+  }
+ }
+</style>

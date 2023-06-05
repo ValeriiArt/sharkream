@@ -1,0 +1,125 @@
+---
+import ScheduleCard from "./ScheduleCard.astro";
+import TrainerCard from "./TrainerCard.astro";
+
+import { trainers } from "./mockData";
+import { schedule } from "./mockDataSchedule";
+---
+
+<section class="trainers">
+ <div class="container">
+  <div class="title-wrapper">
+   <h2 class="title">Наша команда</h2>
+  </div>
+  <div class="content-wrapper">
+   <div class="trainers">
+    <div class="trainers-list">
+     {
+      trainers.map((trainer) => (
+       <TrainerCard
+        name={trainer.name}
+        rank={trainer.rank}
+        experience={trainer.experience}
+        imageUrl={trainer.imageUrl}
+        disciplines={trainer.disciplines}
+       />
+      ))
+     }
+    </div>
+
+    <div class="btn-wrapper">
+     <a class="roller-school-btn" href="/#contacts">Записатися на тренування</a>
+    </div>
+    <div class="schedule">
+     <div class="title-wrapper">
+      <h3 class="title">Графік тренувань</h3>
+     </div>
+     <div class="schedule-list">
+      {
+       schedule.map((item) => (
+        <ScheduleCard name={item.name} date={item.date} />
+       ))
+      }
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+
+ <style lang="scss">
+  @import "../../styles/variables.scss";
+  @import "../../styles/media-queries.scss";
+
+  .title {
+   margin-left: 0;
+   color: $text-black-500;
+   & span {
+    color: $accent-1;
+   }
+  }
+
+  .btn-wrapper {
+   display: flex;
+   justify-content: center;
+   margin-top: 24px;
+  }
+
+  .roller-school-btn {
+   display: block;
+   padding: 16px 16px;
+   font-family: "Merriweather";
+   font-style: normal;
+   font-weight: 700;
+   font-size: 16px;
+   line-height: 1.2;
+   letter-spacing: -0.005em;
+   background: $accent-1;
+   color: $text-white-100;
+   border-radius: 16px;
+   transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+   cursor: pointer;
+   &:is(:hover, :focus-within, :active) {
+    color: $text-black-600;
+    background: $accent-2;
+   }
+   @include media-min(md) {
+    font-size: 20px;
+   }
+   @include media-min(lg) {
+    padding: 24px 40px;
+    font-size: 24px;
+    line-height: 1.25;
+   }
+  }
+
+  .trainers-list {
+   display: grid;
+   grid-template-rows: 1fr;
+   grid-template-columns: minmax(280px, 440px);
+   gap: 16px;
+   justify-content: center;
+   margin-top: 24px;
+
+   @include media-min(sm) {
+    grid-template-columns: repeat(2, minmax(280px, 370px));
+    gap: 24px;
+   }
+
+   @include media-min(lg) {
+    grid-template-columns: repeat(3, minmax(300px, 400px));
+    gap: 30px;
+   }
+  }
+
+  .schedule {
+   margin-top: 30px;
+  }
+
+  .schedule-list {
+   margin-top: 30px;
+   display: grid;
+   gap: 30px;
+  }
+ </style>
+</section>

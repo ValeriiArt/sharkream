@@ -1,0 +1,80 @@
+---
+const { name, srcImage, srcLocation } = Astro.props;
+---
+
+<div class="location-item">
+ <div class="img-wrapper">
+  <img class="img" src={srcImage} alt={name} />
+ </div>
+ <div class="thumb-text">
+  <a href={srcLocation} target="_blank">
+   <p class="text">{name}</p>
+   <img class="icon" src="../public/images/location.svg" alt={name} />
+  </a>
+ </div>
+</div>
+
+<style lang="scss">
+ @import "../../styles/variables.scss";
+ @import "../../styles/media-queries.scss";
+
+ .img {
+  max-width: 100%;
+  width: 540px;
+  height: 450px;
+  border: 2px solid $accent-1;
+  border-radius: 16px;
+  object-fit: cover;
+
+  @include media-between(md, lg) {
+   height: 340px;
+  }
+ }
+
+ .thumb-text > a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 24px;
+  color: $text-black-500;
+  background-color: transparent;
+  cursor: pointer;
+
+  &::after {
+   content: "";
+   position: absolute;
+   bottom: -2px;
+   left: 0;
+   width: 100%;
+   height: 2px;
+   background: $accent-gradient;
+   transform: scaleX(0);
+   transition: transform 0.2s ease-in-out;
+  }
+  &:hover::after {
+   transform: scaleX(1);
+  }
+ }
+
+ .text {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 1.22;
+  letter-spacing: -0.005em;
+  &:hover {
+   color: $accent-1;
+   transition: color 0.2s ease-in-out;
+  }
+
+  @include media-between(md, lg) {
+   font-weight: 400;
+   font-size: 20px;
+  }
+ }
+
+ .icon {
+  width: 24px;
+  height: 30px;
+  margin-left: 20px;
+ }
+</style>

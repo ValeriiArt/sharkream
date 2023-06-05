@@ -1,0 +1,118 @@
+---
+import TravelCard from "./TravelCard.astro";
+import { travels } from "./mockData";
+---
+
+<section class="travels">
+ <div class="container">
+  <div class="title-wrapper">
+   <h2 class="title">Виїзди за місто</h2>
+  </div>
+  <div class="content-wrapper">
+   <div class="travels">
+    <p>
+     Запис на тренування онлайн чи дзвінок по телефону <a
+      class="call-link"
+      href="tel:+380677771024"
+      type="tel">+38(067)777-10-24</a
+     >
+    </p>
+   </div>
+
+   <div class="travels-wrapper">
+    <div class="travels-list">
+     <TravelCard travels={travels} />
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<style lang="scss">
+ @import "../../styles/variables.scss";
+ @import "../../styles/media-queries.scss";
+
+ .travels {
+  margin-top: 40px;
+ }
+
+ .title {
+  font-family: "Merriweather";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.25;
+  letter-spacing: -0.005em;
+  color: $text-black-500;
+ }
+
+ .content-wrapper {
+  margin-top: 32px;
+  & p {
+   margin-top: 24px;
+   font-size: 24px;
+   line-height: 1.2;
+   letter-spacing: -0.005em;
+  }
+ }
+ .call-link {
+  position: relative;
+  font-weight: 700;
+  color: $accent-3;
+  background-color: transparent;
+
+  &:hover {
+   color: $accent-1;
+   transition: color 0.2s ease-in-out;
+  }
+  &::after {
+   content: "";
+   position: absolute;
+   bottom: -2px;
+   left: 0;
+   width: 100%;
+   height: 2px;
+   background: $accent-gradient;
+   transform: scaleX(0);
+   transition: transform 0.2s ease-in-out;
+  }
+  &:hover::after {
+   transform: scaleX(1);
+  }
+ }
+
+ .travels-wrapper {
+  margin-top: 40px;
+ }
+
+ .thumb-wrapper {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(2, minmax(328px, 540px));
+  gap: 30px;
+  margin-top: 24px;
+
+  @include media-max(lg) {
+   grid-template-columns: repeat(2, minmax(328px, 540px));
+   gap: 24px;
+  }
+
+  @include media-max(md) {
+   grid-template-columns: minmax(320px, 540px);
+   justify-content: center;
+  }
+ }
+
+ .location-list {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(3, minmax(210px, 350px));
+  gap: 30px;
+  margin-top: 24px;
+
+  @include media-max(md) {
+   grid-template-columns: minmax(320px, 540px);
+   justify-content: center;
+  }
+ }
+</style>

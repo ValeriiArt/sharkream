@@ -1,0 +1,294 @@
+<header id="main-header" class="header">
+ <div class="container navbar-container">
+  <div class="">
+   <a href="/" class="logo">Shark<span>Team</span></a>
+  </div>
+  <div class="menu-wrapper">
+   <button class="button hide">
+    <span class="line"></span>
+   </button>
+   <nav class="menu hide">
+    <ul class="menu__list">
+     <li class="menu__item">
+      <a href="/#about">Про нас</a>
+     </li>
+     <li class="menu__item">
+      <a href="/#directions">Напрямки</a>
+     </li>
+     <li class="menu__item">
+      <a href="/our-team">Наша команда</a>
+     </li>
+     <li class="menu__item">
+      <a href="/#gallery">Галерея</a>
+     </li>
+     <li class="menu__item">
+      <a href="/#feedbacks">Відгуки</a>
+     </li>
+     <li class="menu__item">
+      <a href="/#contacts">Контакти</a>
+     </li>
+    </ul>
+   </nav>
+  </div>
+ </div>
+</header>
+
+<script>
+ window.addEventListener("scroll", function () {
+  const header = document.getElementById("main-header");
+  const scrolled = window.scrollY > 50;
+  header?.classList.toggle("scrolled", scrolled);
+ });
+ const menuItem = document.querySelectorAll(".menu__item");
+
+ const menuBtn = document.querySelector(".button");
+ const menu = document.querySelector(".menu");
+
+ menuBtn?.addEventListener("click", function () {
+  menuBtn.classList.toggle("hide");
+  menu?.classList.toggle("hide");
+ });
+
+ menuItem.forEach(function (item) {
+  item.addEventListener("click", function () {
+   menuBtn?.classList.toggle("hide");
+   menu?.classList.toggle("hide");
+  });
+ });
+</script>
+
+<style lang="scss">
+ @import "../styles/media-queries.scss";
+ @import "../styles/variables.scss";
+
+ .header {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 60px;
+  z-index: 10;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+  @include media-min(lg) {
+   height: 80px;
+  }
+ }
+
+ .scrolled {
+  background-color: $background-body;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+ }
+
+ .navbar-container {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: space-between;
+ }
+
+ .logo {
+  position: relative;
+  z-index: 3;
+  font-family: "Merriweather";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.25;
+  letter-spacing: -0.005em;
+  color: $accent-1;
+  & span {
+   color: $text-black-500;
+  }
+ }
+
+ .logo span {
+ }
+
+ .menu-wrapper {
+  display: flex;
+  flex: 1 1 auto;
+  padding: 20px 30px;
+ }
+
+ .menu {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 4px 6px;
+  background: linear-gradient(
+   270deg,
+   rgba(255, 255, 255, 0.5) 0%,
+   rgba(255, 255, 255, 0) 100%
+  );
+  border-radius: 8px;
+ }
+
+ .menu__list,
+ .menu__item a {
+  display: flex;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: $text-black-600;
+ }
+
+ .menu__item,
+ .menu__item a {
+  position: relative;
+  text-decoration: none;
+  background-color: transparent;
+  cursor: pointer;
+  &:not(:last-child) {
+   margin-right: 28px;
+   @include media-max(lg) {
+    margin-right: 0;
+   }
+  }
+  &:hover {
+   color: $accent-1;
+   transition: color 0.2s ease-in-out;
+  }
+  &::after {
+   content: "";
+   position: absolute;
+   bottom: -2px;
+   left: 0;
+   width: 100%;
+   height: 2px;
+   background: $accent-gradient;
+   transform: scaleX(0);
+   transition: transform 0.2s ease-in-out;
+  }
+  &:hover::after {
+   transform: scaleX(1);
+  }
+ }
+
+ //  Burger Menu
+
+ .button {
+  display: none;
+ }
+
+ @include media-max(lg) {
+  .button {
+   position: fixed;
+   top: 20px;
+   z-index: 3;
+   display: flex;
+   flex: 0 0 auto;
+   flex-direction: column;
+   width: 30px;
+   height: 18px;
+   padding: 0;
+   background: transparent;
+   border: none;
+   cursor: pointer;
+  }
+
+  .line {
+   top: 50%;
+   transform: scale(0) translate(0, -50%);
+  }
+
+  .line,
+  .button::before,
+  .button::after {
+   position: absolute;
+   left: 0;
+   width: 30px;
+   height: 3px;
+   background: $accent-1;
+   transition: all 0.5s ease 0s;
+  }
+
+  .button::before {
+   content: "";
+   top: 50%;
+   transform: rotate(-45deg) translate(0, -50%);
+  }
+
+  .button::after {
+   content: "";
+   bottom: 50%;
+   transform: rotate(45deg) translate(0, 50%);
+  }
+
+  .button.hide .line {
+   transform: scale(1) translate(0, -50%);
+  }
+
+  .button.hide::before {
+   top: 0;
+   transform: rotate(0) translate(0, 0);
+  }
+
+  .button.hide::after {
+   bottom: 0;
+   transform: rotate(0) translate(0, 0);
+  }
+
+  .menu__list {
+   position: absolute;
+   top: 0;
+   right: 50%;
+   flex-direction: column;
+   align-items: center;
+   flex-wrap: wrap;
+   gap: 16px;
+   width: 100%;
+   margin: 0;
+   padding: 30px 0;
+   background-color: $background-body;
+   transform: translate(50%, 0);
+   transition: top 0.5s;
+   transition: translate top 0.5s ease-in-out;
+  }
+
+  .menu__list.hide {
+   top: -100%;
+   transition: translate top 0.5s ease-in-out;
+  }
+
+  .menu-wrapper {
+   justify-content: flex-end;
+   width: 100%;
+   background: linear-gradient(
+    270deg,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0) 100%
+   );
+   border-radius: 8px;
+  }
+
+  .menu {
+   position: fixed;
+   top: 60px;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgb(41 42 43 / 70.7%);
+   visibility: visible;
+   opacity: 1;
+   transition: all 0.5s ease-in-out;
+  }
+
+  .menu.hide {
+   visibility: hidden;
+   opacity: 0;
+   transition: all 0.5s ease-in-out;
+  }
+
+  .menu::before {
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index: 3;
+   width: 100%;
+   height: 60px;
+   background-color: $background-body;
+   content: "";
+  }
+ }
+</style>

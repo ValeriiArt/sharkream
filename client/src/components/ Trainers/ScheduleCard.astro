@@ -1,0 +1,152 @@
+---
+import type { DateProperty } from "./mockDataSchedule";
+
+interface Props {
+ name: string;
+ date: DateProperty;
+}
+const { name, date } = Astro.props;
+---
+
+<div class="schedule-item">
+ <div class="name-wrapper">
+  <p class="name">{name}</p>
+ </div>
+ <ul class="date-list">
+  {
+   date.map((value) => (
+    <li class="date-item">
+     <img class="icon" src="../public/images/icons_calendar.svg" alt={name} />
+     <p>{value.item}</p>
+    </li>
+   ))
+  }
+ </ul>
+</div>
+
+<style lang="scss">
+ @import "../../styles/variables.scss";
+ @import "../../styles/media-queries.scss";
+
+ .schedule-item {
+  &::after {
+   content: "";
+   display: block;
+   width: fit-content;
+   width: 100%;
+   border-bottom: 1px $accent-1 solid;
+  }
+ }
+
+ .img {
+  width: 100%;
+  height: 260px;
+  border: 2px solid $accent-1;
+  border-radius: 16px;
+  object-fit: cover;
+ }
+
+ .name-wrapper {
+  margin: 14px 0;
+  padding: 0px 10px;
+  color: $text-black-500;
+ }
+
+ .name {
+  margin-bottom: 4px;
+  font-family: "Merriweather";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: -0.005em;
+  text-decoration: underline $accent-1;
+  text-decoration-thickness: 2px;
+  text-underline-position: under;
+ }
+
+ .text {
+  margin-bottom: 4px;
+  font-size: 14px;
+  line-height: 1.21;
+  letter-spacing: -0.005em;
+ }
+
+ .date-list {
+  margin-top: 6px;
+  font-size: 14px;
+  line-height: 1.22;
+ }
+
+ .date-list {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: minmax(280px, 440px);
+  gap: 16px;
+  margin-top: 24px;
+
+  @include media-min(sm) {
+   grid-template-columns: repeat(2, minmax(280px, 440px));
+   gap: 24px;
+  }
+ }
+
+ .date-item {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  line-height: 1.2;
+  color: $text-black-600;
+  & :not(:last-child) {
+   margin-bottom: 10px;
+  }
+ }
+
+ @include media-min(md) {
+  .name-wrapper {
+   font-size: 14px;
+  }
+
+  .name {
+   margin-bottom: 8px;
+   font-size: 20px;
+  }
+
+  .text {
+   margin-bottom: 8px;
+   font-size: 16px;
+   line-height: 1.22;
+  }
+
+  .date-list {
+   font-size: 16px;
+  }
+
+  .date-item {
+   font-size: 16px;
+  }
+ }
+
+ @include media-min(lg) {
+  .name-wrapper {
+   font-size: 16px;
+  }
+
+  .name {
+   margin-bottom: 14px;
+   font-size: 24px;
+  }
+
+  .text {
+   margin-bottom: 14px;
+   font-size: 20px;
+  }
+
+  .date-list {
+   font-size: 20px;
+  }
+
+  .date-item {
+   font-size: 20px;
+  }
+ }
+</style>

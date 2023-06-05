@@ -1,0 +1,217 @@
+---
+---
+
+<section class="skateboard">
+ <div class="container">
+  <div class="title-wrapper">
+   <h2 class="title">Катання на скейті</h2>
+  </div>
+  <div class="content-wrapper">
+   <div class="skateboard">
+    <p>
+     Запис на тренування онлайн чи дзвінок по телефону <a
+      class="call-link"
+      href="tel:+380677771024"
+      type="tel">+38(067)777-10-24</a
+     >
+    </p>
+   </div>
+
+   <div class="skateboard-wrapper">
+    <div class="left">
+     <img
+      src="../public/images/skateboard/skateboard-1.webp"
+      alt="Shark Team"
+     />
+     <span>Хто я:</span>
+     <p>
+      багаторазовий призер локальних змагань зі скейтбордингу, людина, яка <strong
+       >єдина в Україні</strong
+      > зробила особливі надскладні комбінації трюків у рампі та в локації "стріт",
+      тренер, за допомогою якого десятки дітей і дорослих навчилися послідовно, правильно
+      й безпечно кататися на скейтборді, та отримувати безліч позитивних емоцій і
+      загальний особистісний ріст від тренувань зі мною.
+     </p>
+    </div>
+    <div class="img-wrapper-mob">
+     <img
+      src="../public/images/skateboard/skateboard-1.webp"
+      alt="Shark Team"
+     />
+    </div>
+    <div class="right">
+     <span>Кравченко Микола</span>
+     <ul class="experience-list">
+      <li class="item"><p>Стаж катання на скейті: 12 років</p></li>
+      <li class="item"><p>Стаж тренерства: 2 роки</p></li>
+     </ul>
+     <div class="btn-wrapper">
+      <a class="roller-school-btn" href="/#contacts">Записатися на тренування</a
+      >
+     </div>
+     <img
+      src="../public/images/skateboard/skateboard-2.webp"
+      alt="Shark Team"
+     />
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<style lang="scss">
+ @import "../../styles/variables.scss";
+ @import "../../styles/media-queries.scss";
+
+ .skateboard {
+  margin-left: 0;
+  margin-top: 40px;
+ }
+
+ .title {
+  color: $text-black-500;
+ }
+
+ .content-wrapper {
+  margin-top: 32px;
+  & p {
+   margin-top: 24px;
+  }
+ }
+ .call-link {
+  position: relative;
+  font-weight: 700;
+  color: $accent-3;
+  background-color: transparent;
+
+  &:hover {
+   color: $accent-1;
+   transition: color 0.2s ease-in-out;
+  }
+  &::after {
+   content: "";
+   position: absolute;
+   bottom: -2px;
+   left: 0;
+   width: 100%;
+   height: 2px;
+   background: $accent-gradient;
+   transform: scaleX(0);
+   transition: transform 0.2s ease-in-out;
+  }
+  &:hover::after {
+   transform: scaleX(1);
+  }
+ }
+
+ .skateboard-wrapper {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(2, minmax(328px, 540px));
+  gap: 30px;
+  margin-top: 24px;
+
+  & p {
+   font-size: 16px;
+   line-height: 1.2;
+  }
+
+  & span {
+   position: relative;
+   margin-bottom: 26px;
+   padding: 0 10px;
+   font-weight: 700;
+   font-size: 24px;
+   line-height: 1.2;
+
+   &::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    left: 0;
+    bottom: -5px;
+    background-color: $accent-1;
+   }
+  }
+
+  @include media-min(lg) {
+   & p {
+    font-size: 24px;
+   }
+  }
+ }
+
+ @include media-min(md) {
+  .skateboard-wrapper p {
+   font-size: 20px;
+  }
+
+  .img-wrapper-mob {
+   display: none;
+  }
+ }
+
+ @include media-max(md) {
+  .skateboard-wrapper {
+   grid-template-columns: minmax(320px, 540px);
+   justify-content: center;
+  }
+
+  .right img,
+  .left img {
+   display: none;
+  }
+
+  .img-wrapper-mob img {
+   height: 300px;
+  }
+ }
+
+ img {
+  max-width: 100%;
+  width: 540px;
+  height: 620px;
+  margin-bottom: 20px;
+  border: 2px solid $accent-1;
+  border-radius: 16px;
+  object-fit: cover;
+ }
+
+ .btn-wrapper {
+  display: flex;
+  justify-content: start;
+  margin-top: 24px;
+  margin-bottom: 16px;
+ }
+
+ .roller-school-btn {
+  display: block;
+  font-family: "Merriweather";
+  font-style: normal;
+  font-weight: 700;
+  padding: 20px 32px;
+  font-size: 18px;
+  line-height: 1.2;
+  background: $accent-1;
+  color: $text-white-100;
+  border-radius: 16px;
+  transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1),
+   color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  &:is(:hover, :focus-within, :active) {
+   color: $text-black-600;
+   background: $accent-2;
+  }
+
+  @include media-max(xs) {
+   width: 100%;
+   text-align: center;
+  }
+  @include media-min(lg) {
+   padding: 24px 40px;
+   font-size: 24px;
+   line-height: 1.25;
+  }
+ }
+</style>

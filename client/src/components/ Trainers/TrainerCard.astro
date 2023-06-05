@@ -1,0 +1,135 @@
+---
+import type { DisciplinesData } from "./mockData";
+
+interface Props {
+ name: string;
+ rank: string;
+ experience: string;
+ imageUrl: string;
+ disciplines: DisciplinesData;
+}
+const { name, rank, experience, imageUrl, disciplines } = Astro.props;
+---
+
+<div class="trainer-item">
+ <div class="img-wrapper">
+  <img class="img" src={imageUrl} alt={name} />
+ </div>
+ <div class="thumb-text">
+  <p class="name">{name}</p>
+  <p class="text">{rank}</p>
+  <p class="text">{experience}</p>
+  <ul class="disciplin-list">
+   Дисципліни:
+   {
+    disciplines.map((desc) => (
+     <li class="disciplin-item">
+      <p>{desc.item}</p>
+     </li>
+    ))
+   }
+  </ul>
+ </div>
+</div>
+
+<style lang="scss">
+ @import "../../styles/variables.scss";
+ @import "../../styles/media-queries.scss";
+
+ .img {
+  width: 100%;
+  height: 260px;
+  border: 2px solid $accent-1;
+  border-radius: 16px;
+  object-fit: cover;
+ }
+
+ .thumb-text {
+  margin-top: 10px;
+  color: $text-black-500;
+ }
+
+ .name {
+  margin-bottom: 4px;
+  font-family: "Merriweather";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: -0.005em;
+ }
+
+ .text {
+  margin-bottom: 4px;
+  font-size: 14px;
+  line-height: 1.21;
+  letter-spacing: -0.005em;
+ }
+
+ .disciplin-list {
+  margin-top: 6px;
+  list-style-type: disc;
+  list-style-position: outside;
+  font-size: 14px;
+  line-height: 1.22;
+ }
+
+ .disciplin-item {
+  margin-left: 20px;
+  font-size: 14px;
+  line-height: 1.2;
+  color: $text-black-600;
+ }
+
+ @include media-min(md) {
+  .thumb-text {
+   font-size: 14px;
+  }
+
+  .name {
+   margin-bottom: 8px;
+   font-size: 20px;
+  }
+
+  .text {
+   margin-bottom: 8px;
+   font-size: 16px;
+   line-height: 1.22;
+  }
+
+  .disciplin-list {
+   font-size: 16px;
+  }
+
+  .disciplin-item {
+   font-size: 16px;
+  }
+ }
+
+ @include media-min(lg) {
+  .img {
+   height: 400px;
+  }
+
+  .thumb-text {
+   font-size: 16px;
+  }
+
+  .name {
+   margin-bottom: 14px;
+   font-size: 24px;
+  }
+
+  .text {
+   margin-bottom: 14px;
+   font-size: 20px;
+  }
+
+  .disciplin-list {
+   font-size: 20px;
+  }
+
+  .disciplin-item {
+   font-size: 20px;
+  }
+ }
+</style>
