@@ -9,7 +9,7 @@ import { photos } from "./gallery-part/mockData";
    <div class="title-wrapper">
     <h2 class="title">Галерея</h2>
    </div>
-   <GalleryPart client:load photos={photos} />
+   <GalleryPart client:load photos={!photos ? photos : []} />
   </div>
  </div>
 </section>
