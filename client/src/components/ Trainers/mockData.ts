@@ -1,3 +1,8 @@
+import romaImg from '/public/images/trainers/roma.webp';
+import mykolaImg from '/public/images/trainers/mykola.webp';
+import svitlanaImg from '/public/images/trainers/svitlana.webp';
+import mariiaImg from '/public/images/trainers/mariia.webp';
+import ivannaImg from '/public/images/trainers/ivanna.webp';
 
 export type DisciplinesData = {
     item: string;
@@ -17,7 +22,7 @@ export const trainers: TrainersData = [
         name: 'Кондратьєв Роман',
         rank: 'Старший тренер, засновник.',
         experience: 'Чемпіон України, займається тренерством з 2007 року.',
-        imageUrl: '../public/images/trainers/roma.webp',
+        imageUrl: romaImg,
         disciplines: [
             { item: 'катання в скейт парку' },
             { item: 'катання в рампі' },
@@ -30,7 +35,7 @@ export const trainers: TrainersData = [
         name: 'Кравченко Микола',
         rank: 'Тренер по роликам та скейтборрдингу.',
         experience: 'Стаж тренерства: 2 роки',
-        imageUrl: '../public/images/trainers/mykola.webp',
+        imageUrl: mykolaImg,
         disciplines: [
             { item: 'базові основи катання' },
             { item: 'пересування по місту' },
@@ -41,7 +46,7 @@ export const trainers: TrainersData = [
         name: 'Проц Світлана',
         rank: 'Тренер по роликам ',
         experience: 'Досвід роботи 5 років.',
-        imageUrl: '../public/images/trainers/svitlana.webp',
+        imageUrl: svitlanaImg,
         disciplines: [
             { item: 'основні навички катання на роликах по місту' },
             { item: 'початкові елементи слалому' },
@@ -52,7 +57,7 @@ export const trainers: TrainersData = [
         name: 'Філіп’єва Марія',
         rank: 'Тренер',
         experience: 'Досвід роботи 2 роки.',
-        imageUrl: '../public/images/trainers/mariia.webp',
+        imageUrl: mariiaImg,
         disciplines: [
             { item: 'базове катання' },
             { item: 'базові слайди' },
@@ -63,7 +68,7 @@ export const trainers: TrainersData = [
         name: 'Усик Іванна',
         rank: 'Тренер ',
         experience: 'Досвід роботи 2 роки',
-        imageUrl: '../public/images/trainers/ivanna.webp',
+        imageUrl: ivannaImg,
         disciplines: [
             { item: 'базове катання' },
             { item: 'базові слайди' },
