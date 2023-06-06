@@ -1,4 +1,8 @@
 ---
+import directionsRoller from "/public/images/directions-roller.webp";
+import directionsTravel from "/public/images/directions.webp";
+import directionsSkateboard from "/public/images/directions-skateboard.webp";
+
 type directionsData = {
  title: string;
  image: string;
@@ -8,17 +12,17 @@ type directionsData = {
 export const directions: directionsData = [
  {
   title: "Роллер школа",
-  image: "../../public/images/directions-roller.webp",
+  image: directionsRoller,
   src: "roller-school",
  },
  {
   title: "Виїзди за місто",
-  image: "../../public/images/directions.webp",
+  image: directionsTravel,
   src: "/travels",
  },
  {
   title: "Катання на скейті",
-  image: "../../public/images/directions-skateboard.webp",
+  image: directionsSkateboard,
   src: "/skateboard",
  },
 ];
@@ -84,7 +88,7 @@ export const directions: directionsData = [
   height: 116px;
   display: flex;
   margin-left: -70px;
-  background-image: url(../../public/images/our-advantages.svg);
+  background-image: url(/public/images/our-advantages.svg);
   background-size: contain;
   background-repeat: no-repeat;
   @include media-max(lg) {
@@ -136,7 +140,7 @@ export const directions: directionsData = [
   justify-content: center;
 
   max-width: 100%;
-  max-height: 350px;
+  height: 350px;
   border: 2px $accent-1 solid;
   border-radius: 18px;
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -151,7 +155,7 @@ export const directions: directionsData = [
 
   @include media-min(md) {
    width: 400px;
-   max-height: 450px;
+   height: 450px;
   }
  }
 
