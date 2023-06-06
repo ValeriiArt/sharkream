@@ -1,20 +1,24 @@
 ---
+import telegram from "/public/icons/telegram.svg";
+import instagram from "/public/icons/instagram.svg";
+import fb from "/public/icons/fb.svg";
+
 type socialData = {
  name: string;
  src: string;
  icon: string;
 }[];
 const social: socialData = [
- { name: "telegram", src: "", icon: "../../public/icons/telegram.svg" },
+ { name: "telegram", src: "", icon: telegram },
  {
   name: "instagram",
   src: "https://www.instagram.com/shark_team_rollerschool",
-  icon: "../../public/icons/instagram.svg",
+  icon: instagram,
  },
  {
   name: "fb",
   src: "https://www.facebook.com/-SHARK-TEAM--618855728551811",
-  icon: "../../public/icons/fb.svg",
+  icon: fb,
  },
 ];
 ---
