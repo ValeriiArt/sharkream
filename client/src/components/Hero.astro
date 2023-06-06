@@ -1,4 +1,5 @@
 ---
+import heroImgMob from "/public/images/hero.webp";
 import Social from "./common/Social.astro";
 ---
 
@@ -10,7 +11,7 @@ import Social from "./common/Social.astro";
      Катайся на хвилях <span>екстриму</span> разом з нами
     </h1>
     <div class="img-wrapper-mob">
-     <img src="../../public/images/hero.webp" alt="sharkteam" />
+     <img src={heroImgMob} alt="sharkteam" />
     </div>
     <p class="hero-subtitle">
      Навчись катанню на роликах у найкрутішій школі України
@@ -144,7 +145,7 @@ import Social from "./common/Social.astro";
  @include media-min(sm) {
   .hero {
    width: 100%;
-   background-image: url(../../public/images/hero.webp);
+   background-image: url(/public/images/hero.webp);
    background-size: contain;
    background-repeat: no-repeat;
    border-radius: 264px 0px 0px 16px;
@@ -161,7 +162,6 @@ import Social from "./common/Social.astro";
 
  @include media-min(md) {
   .hero {
-   background-image: url(../../public/images/hero.webp);
    background-position: calc(100% - (100vw - 768px) / 2) 0;
   }
   .hero-container {
