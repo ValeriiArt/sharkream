@@ -1,6 +1,6 @@
 ---
 import GalleryPart from "./gallery-part/gallery-part";
-// import { photos } from "./gallery-part/mockData";
+import { photos } from "./gallery-part/mockData";
 ---
 
 <section id="gallery" class="gallery">
@@ -9,7 +9,7 @@ import GalleryPart from "./gallery-part/gallery-part";
    <div class="title-wrapper">
     <h2 class="title">Галерея</h2>
    </div>
-   <GalleryPart client:load />
+   <GalleryPart client:load photos={photos} />
   </div>
  </div>
 </section>
