@@ -1,3 +1,7 @@
+---
+import advantagesImg from "/public/images/advantages-1.webp";
+---
+
 <section id="advantages" class="advantages">
  <div class="container">
   <div class="advantages-wrapper">
@@ -27,11 +31,7 @@
     </div>
     <div class="img-wrapper">
      <div class="thumb">
-      <img
-       class="image"
-       src="../../public/images/advantages-1.webp"
-       alt="advantages sharkteam"
-      />
+      <img class="image" src={advantagesImg} alt="advantages sharkteam" />
      </div>
     </div>
    </div>
@@ -57,7 +57,7 @@
   height: 146px;
   display: flex;
   margin-left: -70px;
-  background-image: url(../../public/images/our-advantages.svg);
+  background-image: url(/public/images/our-advantages.svg);
   background-size: contain;
   background-repeat: no-repeat;
   @include media-max(lg) {
