@@ -1,8 +1,13 @@
+---
+import aboutImg from "/public/images/about.webp";
+import aboutMobImg from "/public/images/about-mob.webp";
+---
+
 <section id="about" class="about">
  <div class="container">
   <div class="about-wrapper">
    <div class="img-wrapper">
-    <img src="/public/images/about.webp" alt="about sharkteam" class="img" />
+    <img src={aboutImg} alt="about sharkteam" class="img" />
    </div>
    <div class="content-wrapper">
     <div class="title-wrapper">
@@ -18,11 +23,7 @@
       тренери готові передати свій багаторічний досвід.
      </p>
      <div class="img-wrapper-mob">
-      <img
-       src="/public/images/about-mob.webp"
-       alt="about sharkteam"
-       class="img"
-      />
+      <img src={aboutMobImg} alt="about sharkteam" class="img" />
      </div>
      <p class="text-content">
       <span class="text-content-subtitle">Наша мета:</span><br />
