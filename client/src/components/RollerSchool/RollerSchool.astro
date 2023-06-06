@@ -1,4 +1,7 @@
 ---
+import rollerImg1 from "/public/images/roller-school/roller-1.webp";
+import rollerImg2 from "/public/images/roller-school/roller-2.webp";
+
 import RollerSchoolCard from "./RollerSchoolCard.astro";
 import { locations } from "./mockData";
 ---
@@ -19,17 +22,11 @@ import { locations } from "./mockData";
     </p>
     <div class="thumb-wrapper">
      <div class="thumb">
-      <img
-       src="../public/images/roller-school/roller-1.webp"
-       alt="Shark Team"
-      />
+      <img src={rollerImg1} alt="Shark Team" />
       <p><strong>Індивідуальні тренування</strong></p>
      </div>
      <div class="thumb">
-      <img
-       src="../public/images/roller-school/roller-2.webp"
-       alt="Shark Team"
-      />
+      <img src={rollerImg2} alt="Shark Team" />
       <p><strong>Групові тренування</strong></p>
      </div>
     </div>
