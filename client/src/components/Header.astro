@@ -33,29 +33,7 @@
  </div>
 </header>
 
-<script>
- window.addEventListener("scroll", function () {
-  const header = document.getElementById("main-header");
-  const scrolled = window.scrollY > 50;
-  header?.classList.toggle("scrolled", scrolled);
- });
- const menuItem = document.querySelectorAll(".menu__item");
 
- const menuBtn = document.querySelector(".button");
- const menu = document.querySelector(".menu");
-
- menuBtn?.addEventListener("click", function () {
-  menuBtn.classList.toggle("hide");
-  menu?.classList.toggle("hide");
- });
-
- menuItem.forEach(function (item) {
-  item.addEventListener("click", function () {
-   menuBtn?.classList.toggle("hide");
-   menu?.classList.toggle("hide");
-  });
- });
-</script>
 
 <style lang="scss">
  @import "../styles/media-queries.scss";
