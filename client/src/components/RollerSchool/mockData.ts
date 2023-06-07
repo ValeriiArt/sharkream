@@ -9,7 +9,7 @@ type LocationsData = {
 export const locations: LocationsData = [
     {
         name: "Паркове Місто",
-        srcImage: "/images/roller-school/roller-4.webp,
+        srcImage: "/images/roller-school/roller-4.webp",
         srcLocation: 'https://goo.gl/maps/QSf1foye2cvEFmLW7?coh=178571&entry=tt'
     },
     {
