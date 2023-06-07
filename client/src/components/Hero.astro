@@ -27,8 +27,8 @@ import Social from "./common/Social.astro";
  </div>
 </section>
 
-<script>
- const hero = document.querySelector(".hero");
+<script is:inline>
+ const hero = document.querySelector<HTMLElement>(".hero");
 
  const updateSize = () => {
   const width = window.innerWidth;
@@ -36,7 +36,7 @@ import Social from "./common/Social.astro";
    hero.style.backgroundPosition = `calc(100% - (100vw - ${width}px) / 2) 0`;
   }
   if (width >= 1024 && hero) {
-   hero.style = null;
+   hero.style.backgroundPosition = "";
   }
  };
  window.addEventListener("resize", updateSize);

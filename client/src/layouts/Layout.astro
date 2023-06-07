@@ -10,7 +10,7 @@ export interface Props {
 const { title } = Astro.props;
 ---
 
-<script>
+<script is:inline>
  window.addEventListener("scroll", function () {
   const header = document.getElementById("main-header");
   const scrolled = window.scrollY > 50;
