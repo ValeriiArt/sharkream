@@ -1,6 +1,4 @@
 ---
-import locationIcon from "/public/images/location.svg";
-
 const { name, srcImage, srcLocation } = Astro.props;
 ---
 
@@ -11,7 +9,7 @@ const { name, srcImage, srcLocation } = Astro.props;
  <div class="thumb-text">
   <a href={srcLocation} target="_blank">
    <p class="text">{name}</p>
-   <img class="icon" src={locationIcon} alt={name} />
+   <img class="icon" src="/images/location.svg" alt={name} />
   </a>
  </div>
 </div>

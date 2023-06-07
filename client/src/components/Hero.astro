@@ -1,5 +1,4 @@
 ---
-import heroImgMob from "/public/images/hero.webp";
 import Social from "./common/Social.astro";
 ---
 
@@ -11,7 +10,7 @@ import Social from "./common/Social.astro";
      Катайся на хвилях <span>екстриму</span> разом з нами
     </h1>
     <div class="img-wrapper-mob">
-     <img src={heroImgMob} alt="sharkteam" />
+     <img src="/images/hero.webp" alt="sharkteam" />
     </div>
     <p class="hero-subtitle">
      Навчись катанню на роликах у найкрутішій школі України
@@ -26,22 +25,6 @@ import Social from "./common/Social.astro";
   </div>
  </div>
 </section>
-
-<script is:inline>
- const hero = document.querySelector<HTMLElement>(".hero");
-
- const updateSize = () => {
-  const width = window.innerWidth;
-  if (width < 1024 && hero) {
-   hero.style.backgroundPosition = `calc(100% - (100vw - ${width}px) / 2) 0`;
-  }
-  if (width >= 1024 && hero) {
-   hero.style.backgroundPosition = "";
-  }
- };
- window.addEventListener("resize", updateSize);
- window.addEventListener("orientationchange", updateSize);
-</script>
 
 <style lang="scss">
  @import "../styles/media-queries.scss";
@@ -100,9 +83,10 @@ import Social from "./common/Social.astro";
   font-family: "Merriweather";
   font-style: normal;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 1.2;
   letter-spacing: -0.005em;
+  text-align: center;
   color: $text-white-100;
   transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1),
    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -137,15 +121,15 @@ import Social from "./common/Social.astro";
  }
 
  @include media-min(xs) {
-  .img-wrapper-mob {
-   display: none;
+  .hero-btn {
+   font-size: 20px;
   }
  }
 
  @include media-min(sm) {
   .hero {
    width: 100%;
-   background-image: url(/public/images/hero.webp);
+   background-image: url(/images/hero.webp);
    background-size: contain;
    background-repeat: no-repeat;
    border-radius: 264px 0px 0px 16px;
@@ -157,6 +141,9 @@ import Social from "./common/Social.astro";
   .hero-content-wrapper {
    max-width: 420px;
    margin-top: 118px;
+  }
+  .img-wrapper-mob {
+   display: none;
   }
  }
 

@@ -1,5 +1,4 @@
 ---
-import iconDate from "/public/images/icons_calendar.svg";
 import type { DateProperty } from "./mockDataSchedule";
 
 interface Props {
@@ -17,7 +16,7 @@ const { name, date } = Astro.props;
   {
    date.map((value) => (
     <li class="date-item">
-     <img class="icon" src={iconDate} alt={name} />
+     <img class="icon" src="/images/icons_calendar.svg" alt={name} />
      <p>{value.item}</p>
     </li>
    ))

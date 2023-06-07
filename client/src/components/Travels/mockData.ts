@@ -1,6 +1,3 @@
-import xPark from "/public/images/camp/x-park.webp";
-import wave from "/public/images/camp/img_2916.webp";
-import dzherelo from "/public/images/camp/dzherelo-camp.webp";
 
 
 export type DescriptionData = {
@@ -17,7 +14,7 @@ export type TravelsData = {
 export const travels: TravelsData = [
     {
         name: "X-Park",
-        srcImage: xPark,
+        srcImage: "/images/camp/x-park.webp",
         srcLocation: 'https://goo.gl/maps/QSf1foye2cvEFmLW7?coh=178571&entry=tt',
         description: [
                 {item: 'Незабутні квести, під час яких можна покращити роботу в команді.'},
@@ -29,7 +26,7 @@ export const travels: TravelsData = [
     },
     {
         name: "Хвиля",
-        srcImage: wave,
+        srcImage: "/images/camp/img_2916.webp",
         srcLocation: 'https://goo.gl/maps/kHuyPc9pXbD1dCJGA?coh=178571&entry=tt',
        description: [
                 {item: 'За декілька днів в таборі,ваша дитина отримає:'},
@@ -42,7 +39,7 @@ export const travels: TravelsData = [
     },
     {
         name: "Джерело",
-        srcImage: dzherelo,
+        srcImage: "/images/camp/dzherelo-camp.webp",
         srcLocation: 'https://goo.gl/maps/jTr1UFR1DT4rJ5uF8?coh=178571&entry=tt',
         description: [
                 {item: 'За декілька днів в таборі,ваша дитина отримає:'},

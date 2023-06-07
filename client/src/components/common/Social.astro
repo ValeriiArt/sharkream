@@ -1,24 +1,20 @@
 ---
-import telegram from "/public/icons/telegram.svg";
-import instagram from "/public/icons/instagram.svg";
-import fb from "/public/icons/fb.svg";
-
 type socialData = {
  name: string;
  src: string;
  icon: string;
 }[];
 const social: socialData = [
- { name: "telegram", src: "", icon: telegram },
+ { name: "telegram", src: "", icon: "/icons/telegram.svg" },
  {
   name: "instagram",
   src: "https://www.instagram.com/shark_team_rollerschool",
-  icon: instagram,
+  icon: "/icons/instagram.svg",
  },
  {
   name: "fb",
   src: "https://www.facebook.com/-SHARK-TEAM--618855728551811",
-  icon: fb,
+  icon: "/icons/fb.svg",
  },
 ];
 ---

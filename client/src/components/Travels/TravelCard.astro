@@ -1,5 +1,4 @@
 ---
-import locationIcon from "/public/images/location.svg"
 import type { TravelsData } from "./mockData";
 
 interface Props {
@@ -19,7 +18,7 @@ const { travels } = Astro.props;
     <div class="title-wrapper">
      <a href={travel.srcLocation} target="_blank">
       <h3 class="content-title">{travel.name}</h3>
-      <img class="icon" src={locationIcon} alt={travel.name} />
+      <img class="icon" src="/images/location.svg" alt={travel.name} />
      </a>
     </div>
     <ul class="content-list">

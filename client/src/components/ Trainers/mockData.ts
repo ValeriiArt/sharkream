@@ -1,8 +1,3 @@
-import romaImg from '/public/images/trainers/roma.webp';
-import mykolaImg from '/public/images/trainers/mykola.webp';
-import svitlanaImg from '/public/images/trainers/svitlana.webp';
-import mariiaImg from '/public/images/trainers/mariia.webp';
-import ivannaImg from '/public/images/trainers/ivanna.webp';
 
 export type DisciplinesData = {
     item: string;
@@ -22,7 +17,7 @@ export const trainers: TrainersData = [
         name: 'Кондратьєв Роман',
         rank: 'Старший тренер, засновник.',
         experience: 'Чемпіон України, займається тренерством з 2007 року.',
-        imageUrl: romaImg,
+        imageUrl: '/images/trainers/roma.webp',
         disciplines: [
             { item: 'катання в скейт парку' },
             { item: 'катання в рампі' },
@@ -35,7 +30,7 @@ export const trainers: TrainersData = [
         name: 'Кравченко Микола',
         rank: 'Тренер по роликам та скейтборрдингу.',
         experience: 'Стаж тренерства: 2 роки',
-        imageUrl: mykolaImg,
+        imageUrl: '/images/trainers/mykola.webp',
         disciplines: [
             { item: 'базові основи катання' },
             { item: 'пересування по місту' },
@@ -46,7 +41,7 @@ export const trainers: TrainersData = [
         name: 'Проц Світлана',
         rank: 'Тренер по роликам ',
         experience: 'Досвід роботи 5 років.',
-        imageUrl: svitlanaImg,
+        imageUrl: '/images/trainers/svitlana.webp',
         disciplines: [
             { item: 'основні навички катання на роликах по місту' },
             { item: 'початкові елементи слалому' },
@@ -57,7 +52,7 @@ export const trainers: TrainersData = [
         name: 'Філіп’єва Марія',
         rank: 'Тренер',
         experience: 'Досвід роботи 2 роки.',
-        imageUrl: mariiaImg,
+        imageUrl: '/images/trainers/mariia.webp',
         disciplines: [
             { item: 'базове катання' },
             { item: 'базові слайди' },
@@ -68,7 +63,7 @@ export const trainers: TrainersData = [
         name: 'Усик Іванна',
         rank: 'Тренер ',
         experience: 'Досвід роботи 2 роки',
-        imageUrl: ivannaImg,
+        imageUrl: '/images/trainers/ivanna.webp',
         disciplines: [
             { item: 'базове катання' },
             { item: 'базові слайди' },

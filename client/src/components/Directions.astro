@@ -1,7 +1,4 @@
 ---
-import directionsRoller from "/public/images/directions-roller.webp";
-import directionsTravel from "/public/images/directions.webp";
-import directionsSkateboard from "/public/images/directions-skateboard.webp";
 
 type directionsData = {
  title: string;
@@ -12,17 +9,17 @@ type directionsData = {
 export const directions: directionsData = [
  {
   title: "Роллер школа",
-  image: directionsRoller,
+  image: "/images/directions-roller.webp",
   src: "roller-school",
  },
  {
   title: "Виїзди за місто",
-  image: directionsTravel,
+  image: "/images/directions.webp",
   src: "/travels",
  },
  {
   title: "Катання на скейті",
-  image: directionsSkateboard,
+  image: "/images/directions-skateboard.webp",
   src: "/skateboard",
  },
 ];
