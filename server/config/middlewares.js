@@ -5,6 +5,8 @@ module.exports = [
  {
   name: "strapi::customCors",
   config: {
+   enabled: true,
+   header: "*",
    origin: ["*"],
   },
  },
