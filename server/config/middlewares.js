@@ -1,11 +1,33 @@
 module.exports = [
  "strapi::errors",
- "strapi::security",
+ {
+  name: "strapi::security",
+  config: {
+   contentSecurityPolicy: {
+    useDefaults: true,
+    directives: {
+     "connect-src": ["'self'", "https:"],
+     "img-src": [
+      "'self'",
+      "data:",
+      "blob:",
+      `${env("DO_SPACE_BUCKET")}.${env("DO_SPACE_ENDPOINT")}`,
+     ],
+     "media-src": [
+      "'self'",
+      "data:",
+      "blob:",
+      `${env("DO_SPACE_BUCKET")}.${env("DO_SPACE_ENDPOINT")}`,
+     ],
+     upgradeInsecureRequests: null,
+    },
+   },
+  },
+ },
 
  {
   name: "strapi::cors",
   config: {
-   credentials: false,
    origin: "*",
    expose: ["WWW-Authenticate", "Server-Authorization"],
    maxAge: 31536000,
