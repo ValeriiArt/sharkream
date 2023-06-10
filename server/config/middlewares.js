@@ -1,9 +1,9 @@
 module.exports = [
  "strapi::errors",
  "strapi::security",
- "strapi::cors",
+
  {
-  name: "strapi::customCors",
+  name: "strapi::cors",
   config: {
    enabled: true,
    header: "*",
