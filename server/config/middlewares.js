@@ -18,14 +18,14 @@ module.exports = [
  {
   name: "strapi::cors",
   config: {
-   origin: "*",
-   expose: ["WWW-Authenticate", "Server-Authorization"],
-   maxAge: 31536000,
+   origin: ["*"],
    headers: [
     "Content-Type",
     "Authorization",
     "X-Frame-Options",
+    "User-Agent",
     "Origin",
+    "X-Requested-With",
     "Accept",
    ],
    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS", "HEAD"],
