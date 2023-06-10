@@ -7,18 +7,8 @@ module.exports = [
     useDefaults: true,
     directives: {
      "connect-src": ["'self'", "https:"],
-     "img-src": [
-      "'self'",
-      "data:",
-      "blob:",
-      `${env("DO_SPACE_BUCKET")}.${env("DO_SPACE_ENDPOINT")}`,
-     ],
-     "media-src": [
-      "'self'",
-      "data:",
-      "blob:",
-      `${env("DO_SPACE_BUCKET")}.${env("DO_SPACE_ENDPOINT")}`,
-     ],
+     "img-src": ["'self'", "data:", "blob:"],
+     "media-src": ["'self'", "data:", "blob:"],
      upgradeInsecureRequests: null,
     },
    },
