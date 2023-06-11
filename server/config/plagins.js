@@ -1,4 +1,7 @@
 module.exports = ({ env }) => ({
+ "vercel-deploy": {
+  enabled: true,
+ },
  "cloudflare-pages": {
   enabled: true,
   config: {

@@ -3,6 +3,8 @@ const bot = new Telegraf(process.env.TELEGRAM_TOKEN);
 
 module.exports = bot;
 
+bot.launch();
+
 const handleFormSubmission = async (formData) => {
  const { name, email, tel } = formData;
  try {
