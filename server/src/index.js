@@ -2,7 +2,6 @@
 
 require("dotenv").config();
 const formController = require("./api/submit-form/controllers/submit-form.js");
-// const bot = require("./extensions/telegram-bot/telegram.js");
 
 module.exports = {
  create: formController.create,
