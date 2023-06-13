@@ -3,255 +3,255 @@ import ContactForm from "./contact-form/contact-from";
 ---
 
 <section id="contacts" class="contacts">
- <div class="container">
-  <div class="contacts-wrapper">
-   <div class="title-wrapper">
-    <h2 class="title">Контакти</h2>
-   </div>
+    <div class="container">
+        <div class="contacts-wrapper">
+            <div class="title-wrapper">
+                <h2 class="title">Контакти</h2>
+            </div>
 
-   <div class="content-wrapper">
-    <div class="address-wrapper">
-     <address>
-      <p class="address-title">Адреса</p>
-      <p>Україна, м.Київ, вул. Овруцька, 18</p>
-      <div class="contact-wrapper">
-       <p class="address-title">Контакти</p>
-       <a href="tel:+380677771024">+38 067 777 10 24</a>
-       <a href="mailto:shark.team.rollerschool@gmail.com">
-        shark.team.rollerschool@gmail.com
-       </a>
-      </div>
-     </address>
+            <div class="content-wrapper">
+                <div class="address-wrapper">
+                    <address>
+                        <p class="address-title">Адреса</p>
+                        <p>Україна, м.Київ, вул. Овруцька, 18</p>
+                        <div class="contact-wrapper">
+                            <p class="address-title">Контакти</p>
+                            <a href="tel:+380677771024">+38 067 777 10 24</a>
+                            <a href="mailto:shark.team.rollerschool@gmail.com">
+                                shark.team.rollerschool@gmail.com
+                            </a>
+                        </div>
+                    </address>
+                </div>
+                <div class="img-wrapper">
+                    <img src="/images/logo.webp" alt="logo sharkteam" />
+                </div>
+                <div class="contact-form">
+                    <h3>Залиште свої контакти і ми вам зателефонуємо</h3>
+                    <ContactForm client:load />
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="img-wrapper">
-     <img src="/images/logo.webp" alt="logo sharkteam" />
-    </div>
-    <div class="contact-form">
-     <h3>Залиште свої контакти і ми вам зателефонуємо</h3>
-     <ContactForm client:only />
-    </div>
-   </div>
-  </div>
- </div>
 </section>
 
 <style lang="scss">
- @import "../styles/variables.scss";
- @import "../styles/media-queries.scss";
+    @import "../styles/variables.scss";
+    @import "../styles/media-queries.scss";
 
- .contacts {
-  margin-top: 72px;
- }
- .contacts-wrapper {
-  display: flex;
-  flex-direction: column;
-  grid-gap: 32px;
- }
+    .contacts {
+        margin-top: 72px;
+    }
+    .contacts-wrapper {
+        display: flex;
+        flex-direction: column;
+        grid-gap: 32px;
+    }
 
- .title-wrapper {
-  width: 100%;
-  height: 116px;
-  display: flex;
-  margin-left: -70px;
-  background-image: url(/images/our-advantages.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  @include media-max(lg) {
-   height: 60px;
-   margin-left: -50px;
-  }
- }
- .title {
-  margin-top: 14px;
-  margin-left: 70px;
-  @include media-max(lg) {
-   margin-top: 10px;
-   margin-left: 50px;
-  }
- }
+    .title-wrapper {
+        width: 100%;
+        height: 116px;
+        display: flex;
+        margin-left: -70px;
+        background-image: url(/images/our-advantages.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        @include media-max(lg) {
+            height: 60px;
+            margin-left: -50px;
+        }
+    }
+    .title {
+        margin-top: 14px;
+        margin-left: 70px;
+        @include media-max(lg) {
+            margin-top: 10px;
+            margin-left: 50px;
+        }
+    }
 
- .content-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
- }
+    .content-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
- .address-wrapper {
-  grid-area: address-wrapper;
-  width: 100%;
-  max-width: 400px;
-  padding: 16px 14px;
-  background: rgba(255, 241, 115, 0.4);
-  border: 1px solid $accent-1;
-  backdrop-filter: blur(2px);
-  border-radius: 16px;
-  text-align: center;
-  font-size: 16px;
-  line-height: 1.2;
- }
+    .address-wrapper {
+        grid-area: address-wrapper;
+        width: 100%;
+        max-width: 400px;
+        padding: 16px 14px;
+        background: rgba(255, 241, 115, 0.4);
+        border: 1px solid $accent-1;
+        backdrop-filter: blur(2px);
+        border-radius: 16px;
+        text-align: center;
+        font-size: 16px;
+        line-height: 1.2;
+    }
 
- .address-title {
-  padding-bottom: 24px;
-  font-family: "Merriweather";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 1.25;
-  color: $text-black-500;
- }
+    .address-title {
+        padding-bottom: 24px;
+        font-family: "Merriweather";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 1.25;
+        color: $text-black-500;
+    }
 
- .contact-wrapper {
-  grid-area: contact-wrapper;
-  margin-top: 24px;
-  overflow-y: hidden;
- }
+    .contact-wrapper {
+        grid-area: contact-wrapper;
+        margin-top: 24px;
+        overflow-y: hidden;
+    }
 
- .contact-wrapper a {
-  display: inline-block;
-  position: relative;
-  color: $text-black-500;
-  background-color: transparent;
-  &:not(:last-child) {
-   margin-bottom: 16px;
-  }
-  &:hover {
-   color: $accent-1;
-   transition: color 0.2s ease-in-out;
-  }
-  &::after {
-   content: "";
-   position: absolute;
-   bottom: -2px;
-   left: 0;
-   width: 100%;
-   height: 2px;
-   background: $accent-gradient;
-   transform: scaleX(0);
-   transition: transform 0.2s ease-in-out;
-  }
-  &:hover::after {
-   transform: scaleX(1);
-  }
- }
+    .contact-wrapper a {
+        display: inline-block;
+        position: relative;
+        color: $text-black-500;
+        background-color: transparent;
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }
+        &:hover {
+            color: $accent-1;
+            transition: color 0.2s ease-in-out;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: $accent-gradient;
+            transform: scaleX(0);
+            transition: transform 0.2s ease-in-out;
+        }
+        &:hover::after {
+            transform: scaleX(1);
+        }
+    }
 
- .img-wrapper {
-  display: none;
- }
+    .img-wrapper {
+        display: none;
+    }
 
- .contact-form {
-  max-width: 400px;
-  display: flex;
-  flex-direction: column;
+    .contact-form {
+        max-width: 400px;
+        display: flex;
+        flex-direction: column;
 
-  & h3 {
-   width: 100%;
-   font-weight: 700;
-   font-size: 16px;
-   line-height: 1.2;
-   color: $text-black-500;
-  }
+        & h3 {
+            width: 100%;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 1.2;
+            color: $text-black-500;
+        }
 
-  @include media-max(sm) {
-   margin-top: 24px;
-   & h3 {
-    text-align: center;
-   }
-  }
- }
+        @include media-max(sm) {
+            margin-top: 24px;
+            & h3 {
+                text-align: center;
+            }
+        }
+    }
 
- @include media-max(xs) {
-  .contacts {
-   margin-top: 32px;
-   &::after {
-    content: "";
-    display: block;
-    width: fit-content;
-    width: 60%;
-    margin: 40px auto 0;
-    border-bottom: 1px $accent-1 solid;
-   }
-  }
+    @include media-max(xs) {
+        .contacts {
+            margin-top: 32px;
+            &::after {
+                content: "";
+                display: block;
+                width: fit-content;
+                width: 60%;
+                margin: 40px auto 0;
+                border-bottom: 1px $accent-1 solid;
+            }
+        }
 
-  .contacts-wrapper {
-   grid-gap: 24px;
-  }
+        .contacts-wrapper {
+            grid-gap: 24px;
+        }
 
-  .title-wrapper {
-   justify-content: center;
-   margin-left: 0;
-   background-position: center;
-  }
+        .title-wrapper {
+            justify-content: center;
+            margin-left: 0;
+            background-position: center;
+        }
 
-  .title {
-   margin-top: 10px;
-   margin-left: 0;
-  }
- }
+        .title {
+            margin-top: 10px;
+            margin-left: 0;
+        }
+    }
 
- @include media-min(sm) {
-  .content-wrapper {
-   display: grid;
-   grid-template-columns:
-    minmax(170px, 240px) minmax(140px, 200px) minmax(140px, 175px)
-    0fr;
-   gap: 24px;
-   grid-template-rows: auto;
-   grid-template-areas:
-    "contact-form img-wrapper img-wrapper"
-    "address-wrapper address-wrapper .";
-   justify-content: center;
-  }
-  .img-wrapper {
-   display: block;
-   grid-area: img-wrapper;
-   margin-top: 20px;
-  }
+    @include media-min(sm) {
+        .content-wrapper {
+            display: grid;
+            grid-template-columns:
+                minmax(170px, 240px) minmax(140px, 200px) minmax(140px, 175px)
+                0fr;
+            gap: 24px;
+            grid-template-rows: auto;
+            grid-template-areas:
+                "contact-form img-wrapper img-wrapper"
+                "address-wrapper address-wrapper .";
+            justify-content: center;
+        }
+        .img-wrapper {
+            display: block;
+            grid-area: img-wrapper;
+            margin-top: 20px;
+        }
 
-  .contact-form h3 {
-   font-size: 24px;
-  }
- }
+        .contact-form h3 {
+            font-size: 24px;
+        }
+    }
 
- @include media-between(sm, lg) {
-  .contact-form h3 {
-   width: 400px;
-  }
+    @include media-between(sm, lg) {
+        .contact-form h3 {
+            width: 400px;
+        }
 
-  .address-wrapper {
-   max-width: 380px;
-   margin-top: -170px;
-   z-index: 5;
-  }
- }
+        .address-wrapper {
+            max-width: 380px;
+            margin-top: -170px;
+            z-index: 5;
+        }
+    }
 
- @include media-min(lg) {
-  .content-wrapper {
-   position: relative;
-   display: flex;
-   justify-content: flex-end;
-  }
+    @include media-min(lg) {
+        .content-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+        }
 
-  .img-wrapper img {
-   width: 380px;
-  }
+        .img-wrapper img {
+            width: 380px;
+        }
 
-  .address-wrapper {
-   position: absolute;
-   width: 470px;
-   left: 0;
-   padding: 24px 16px;
-   text-align: center;
-   font-size: 24px;
-  }
+        .address-wrapper {
+            position: absolute;
+            width: 470px;
+            left: 0;
+            padding: 24px 16px;
+            text-align: center;
+            font-size: 24px;
+        }
 
-  .contact-form {
-   flex-basis: 33.3%;
-  }
- }
+        .contact-form {
+            flex-basis: 33.3%;
+        }
+    }
 
- @include media-max(lg) {
-  .img-wrapper img {
-   width: 420px;
-  }
- }
+    @include media-max(lg) {
+        .img-wrapper img {
+            width: 420px;
+        }
+    }
 </style>

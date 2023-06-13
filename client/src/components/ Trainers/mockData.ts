@@ -28,7 +28,7 @@ export const trainers: TrainersData = [
     },
     {
         name: 'Кравченко Микола',
-        rank: 'Тренер по роликам та скейтборрдингу.',
+        rank: 'Тренер по роликам та скейтбордингу.',
         experience: 'Стаж тренерства: 2 роки',
         imageUrl: '/images/trainers/mykola.webp',
         disciplines: [
