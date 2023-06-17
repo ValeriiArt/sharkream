@@ -10,10 +10,33 @@ export interface Props {
 const { title } = Astro.props;
 ---
 
-<html lang="ua">
+<html lang="uk">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta
+            name="description"
+            content="Ми спортивна школа Shark Team.
+Наше дружне ком‘юніті завжди знайде підхід до учнів будь якого віку. Досвідчені тренери готові передати свій багаторічний досвід. Роллер школа №1 в Україні."
+        />
+        <meta
+            name="keywords"
+            content="Ролики, Роллер школа, ролики, ролики солом'янський район, ролики шевченківський район, шарктім, sharkteam roller school, Роллер школа №1 в Україні. скейт, скейтборд"
+        />
+        <meta
+            property="og:title"
+            content="Ми спортивна школа Shark Team.
+Наше дружне ком‘юніті завжди знайде підхід до учнів будь якого віку. Досвідчені тренери готові передати свій багаторічний досвід. Роллер школа №1 в Україні."
+        />
+        <meta property="og:image" content="/logo.webp" />
+        <meta property="og:url" content="https://sharkteam.com.ua/" />
+        <meta
+            property="og:description"
+            content="Ми спортивна школа Shark Team.
+Наше дружне ком‘юніті завжди знайде підхід до учнів будь якого віку. Досвідчені тренери готові передати свій багаторічний досвід. Роллер школа №1 в Україні."
+        />
+        <meta property="og:type" content="article" />
         <link rel="icon" type="image/svg+xml" href="/logo.webp" />
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
