@@ -59,7 +59,7 @@ import Social from "./common/Social.astro";
 
     .hero-subtitle {
         max-width: 340px;
-        margin-top: 32px;
+        margin-top: 16px;
         font-style: normal;
         font-weight: 500;
         font-size: 20px;
@@ -67,11 +67,13 @@ import Social from "./common/Social.astro";
         color: $text-black-600;
     }
 
-    .img-wrapper-mob img {
-        width: 100%;
-        border-radius: 116px 16px 16px 16px;
+    .img-wrapper-mob {
+        margin-top: 16px;
+        & img {
+            width: 100%;
+            border-radius: 116px 16px 16px 16px;
+        }
     }
-
     .hero-btn-wrapper {
         margin-top: 32px;
     }
@@ -146,6 +148,9 @@ import Social from "./common/Social.astro";
         }
         .img-wrapper-mob {
             display: none;
+        }
+        .hero-subtitle {
+            margin-top: 32px;
         }
     }
 
