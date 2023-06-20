@@ -3,192 +3,195 @@ import Social from "./common/Social.astro";
 ---
 
 <section class="hero">
- <div class="container">
-  <div class="hero-container">
-   <div class="hero-content-wrapper">
-    <h1 class="hero-title">
-     Катайся на хвилях <span>екстриму</span> разом з нами
-    </h1>
-    <div class="img-wrapper-mob">
-     <img src="/images/hero.webp" alt="sharkteam" />
+    <div class="container">
+        <div class="hero-container">
+            <div class="hero-content-wrapper">
+                <h1 class="hero-title">
+                    Катайся на хвилях <span>екстриму</span> разом з нами
+                </h1>
+                <div class="img-wrapper-mob">
+                    <img src="/images/hero.webp" alt="sharkteam" />
+                </div>
+                <p class="hero-subtitle">
+                    Навчись катанню на роликах у найкрутішій школі України
+                </p>
+                <div class="hero-btn-wrapper">
+                    <a href="/#contacts" class="hero-btn"
+                        >Записатися на тренування</a
+                    >
+                </div>
+            </div>
+            <div class="social">
+                <Social />
+            </div>
+        </div>
     </div>
-    <p class="hero-subtitle">
-     Навчись катанню на роликах у найкрутішій школі України
-    </p>
-    <div class="hero-btn-wrapper">
-     <a href="/#contacts" class="hero-btn">Записатися на тренування</a>
-    </div>
-   </div>
-   <div class="social">
-    <Social />
-   </div>
-  </div>
- </div>
 </section>
 
 <style lang="scss">
- @import "../styles/media-queries.scss";
- @import "../styles/variables.scss";
+    @import "../styles/media-queries.scss";
+    @import "../styles/variables.scss";
 
- .hero {
- }
+    .hero {
+    }
 
- .hero-container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
- }
+    .hero-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
 
- .hero-content-wrapper {
-  margin-top: 70px;
- }
+    .hero-content-wrapper {
+        margin-top: 70px;
+    }
 
- .hero-title {
-  font-family: "Merriweather";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 32px;
-  line-height: 1.25;
-  color: $text-black-500;
-  & span {
-   color: $accent-1;
-  }
- }
+    .hero-title {
+        font-family: "Merriweather";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 26px;
+        line-height: 1.25;
+        color: $text-black-500;
+        & span {
+            color: $accent-1;
+        }
+    }
 
- .hero-subtitle {
-  max-width: 340px;
-  margin-top: 32px;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 1.2;
-  color: $text-black-600;
- }
+    .hero-subtitle {
+        max-width: 340px;
+        margin-top: 32px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 1.2;
+        color: $text-black-600;
+    }
 
- .img-wrapper-mob img {
-  width: 100%;
-  border-radius: 116px 16px 16px 16px;
- }
+    .img-wrapper-mob img {
+        width: 100%;
+        border-radius: 116px 16px 16px 16px;
+    }
 
- .hero-btn-wrapper {
-  margin-top: 32px;
- }
+    .hero-btn-wrapper {
+        margin-top: 32px;
+    }
 
- .hero-btn {
-  display: block;
-  max-width: 324px;
-  padding: 16px 12px;
-  background: $accent-1;
-  border-radius: 16px;
-  font-family: "Merriweather";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.2;
-  letter-spacing: -0.005em;
-  text-align: center;
-  color: $text-white-100;
-  transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1),
-   color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
-  &:is(:hover, :focus-within, :active) {
-   color: $text-black-600;
-   background: $accent-2;
-  }
- }
+    .hero-btn {
+        display: block;
+        max-width: 324px;
+        padding: 16px 12px;
+        background: $accent-1;
+        border-radius: 16px;
+        font-family: "Merriweather";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 1.2;
+        letter-spacing: -0.005em;
+        text-align: center;
+        color: $text-white-100;
+        transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1),
+            color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
+        &:is(:hover, :focus-within, :active) {
+            color: $text-black-600;
+            background: $accent-2;
+        }
+    }
 
- @include media-max(xs) {
-  .hero {
-   &::after {
-    content: "";
-    display: block;
-    width: fit-content;
-    width: 80%;
-    margin: 40px auto 0;
-    border-bottom: 1px $accent-1 solid;
-   }
-  }
-  .hero-btn-wrapper {
-   display: flex;
-   justify-content: center;
-  }
- }
+    @include media-max(xs) {
+        .hero {
+            &::after {
+                content: "";
+                display: block;
+                width: fit-content;
+                width: 80%;
+                margin: 40px auto 0;
+                border-bottom: 1px $accent-1 solid;
+            }
+        }
+        .hero-btn-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+    }
 
- .social {
-  margin-top: 32px;
-  display: flex;
-  justify-content: center;
- }
+    .social {
+        margin-top: 32px;
+        display: flex;
+        justify-content: center;
+    }
 
- @include media-min(xs) {
-  .hero-btn {
-   font-size: 20px;
-  }
- }
+    @include media-min(xs) {
+        .hero-btn {
+            font-size: 20px;
+        }
+    }
 
- @include media-min(sm) {
-  .hero {
-   width: 100%;
-   background-image: url(/images/hero.webp);
-   background-size: contain;
-   background-repeat: no-repeat;
-   border-radius: 264px 0px 0px 16px;
-   background-position: calc(100% - (100vw - 640px) / 2) 0;
-  }
-  .hero-container {
-   height: 440px;
-  }
-  .hero-content-wrapper {
-   max-width: 420px;
-   margin-top: 118px;
-  }
-  .img-wrapper-mob {
-   display: none;
-  }
- }
+    @include media-min(sm) {
+        .hero {
+            width: 100%;
+            background-image: url(/images/hero-mob.webp);
+            background-size: contain;
+            background-repeat: no-repeat;
+            border-radius: 264px 0px 0px 16px;
+            background-position: calc(100% - (100vw - 640px) / 2) 0;
+        }
+        .hero-container {
+            height: 440px;
+        }
+        .hero-content-wrapper {
+            max-width: 350px;
+            margin-top: 118px;
+        }
+        .img-wrapper-mob {
+            display: none;
+        }
+    }
 
- @include media-min(md) {
-  .hero {
-   background-position: calc(100% - (100vw - 768px) / 2) 0;
-  }
-  .hero-container {
-   height: 460px;
-  }
- }
+    @include media-min(md) {
+        .hero {
+            background-image: url(/images/hero.webp);
+            background-position: calc(100% - (100vw - 768px) / 2) 0;
+        }
+        .hero-container {
+            height: 460px;
+        }
+    }
 
- @include media-min(lg) {
-  .hero-container {
-   height: 760px;
-  }
-  .hero {
-   background-position: calc(100% - (100vw - 1440px) / 2) 0;
-  }
+    @include media-min(lg) {
+        .hero-container {
+            height: 760px;
+        }
+        .hero {
+            background-position: calc(100% - (100vw - 1440px) / 2) 0;
+        }
 
-  .hero-content-wrapper {
-   max-width: 800px;
-   margin-top: 228px;
-  }
-  .hero-title {
-   font-size: 56px;
-   line-height: 1.25;
-   letter-spacing: 0.015em;
-  }
-  .hero-subtitle {
-   max-width: 540px;
-   font-size: 32px;
-   line-height: 1.2;
-  }
-  .hero-btn-wrapper {
-   margin-top: 72px;
-  }
-  .hero-btn {
-   max-width: 430px;
-   padding: 24px 40px;
-   font-size: 24px;
-   line-height: 1.25;
-  }
-  .social {
-   margin-top: 74px;
-  }
- }
+        .hero-content-wrapper {
+            max-width: 580px;
+            margin-top: 228px;
+        }
+        .hero-title {
+            font-size: 40px;
+            line-height: 1.25;
+            letter-spacing: 0.015em;
+        }
+        .hero-subtitle {
+            max-width: 540px;
+            font-size: 32px;
+            line-height: 1.2;
+        }
+        .hero-btn-wrapper {
+            margin-top: 40px;
+        }
+        .hero-btn {
+            max-width: 430px;
+            padding: 24px 40px;
+            font-size: 24px;
+            line-height: 1.25;
+        }
+        .social {
+            margin-top: 130px;
+        }
+    }
 </style>
