@@ -38,17 +38,6 @@ export const trainers: TrainersData = [
         ]
     },
     {
-        name: 'Проц Світлана',
-        rank: 'Тренер по роликам ',
-        experience: 'Досвід роботи 5 років.',
-        imageUrl: '/images/trainers/svitlana.webp',
-        disciplines: [
-            { item: 'основні навички катання на роликах по місту' },
-            { item: 'початкові елементи слалому' },
-            { item: 'базове катання в скейт-парку, рампі.' },
-        ]
-    },
-    {
         name: 'Філіп’єва Марія',
         rank: 'Тренер',
         experience: 'Досвід роботи 2 роки.',
